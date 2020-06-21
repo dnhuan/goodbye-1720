@@ -1,10 +1,11 @@
+const emoList = ["😀","😃","😄","😁","😆","😅","😂","🤣","☺️","😊","😇","🙂","🙃","😉","😌","😍","😘","😗","😙","😚","😋","😛","😝","😜","🤪","🤨","🧐","🤓","😎","🤩","😏","😒","😞","😔","😟","😕","🙁","☹️","😣","😖","😫","😩","😢","😭","😤","😠","😡","🤬","🤯","😳","😱","😨","😰","😥","😓","🤗","🤔","🤭","🤫","🤥","😶","😐","😑","😬","🙄","😯","😦","😧","😮","😲","😴","🤤","😪","😵","🤐","🤢","🤮","🤧","😷","🤒","🤕","🤑","🤠","😈","👿","👹","👺","🤡","💩","👻","💀","☠️","👽","👾","🤖","🎃","😺","😸","😹","😻","😼","😽","🙀","😿","😾","👋","🤚","🖐","✋","🖖","👌","✌️","🤞","🤟","🤘","🤙","👈","👉","👆","🖕","👇","☝️","👍","👎","✊","👊","🤛","🤜","👏","🙌","👐","🤲","🤝","💪","🧠"];
+
 class Emoji{
     constructor(x, y, emoID, TTL){
         this.x = x;
         this.y = y;
         this.emoID = emoID;
         this.TTL = TTL;
-        this.emoList = ["hi banana 1", "banana 2 says hi","😀","🤔","🥵"];
         this.divID = parseInt(Math.random() * 696969 + 5);
         console.log(this.divID)
     }
@@ -19,7 +20,7 @@ class Emoji{
         console.log('create',this.divID)
         const cordX = parseInt(this.x / 100 * $(window).width())
         const cordY = parseInt(this.y / 100 * $(window).height())
-        $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px"> hello bitasid </div>`)
+        $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px">${emoList[this.emoID]}</div>`)
         setTimeout(()=>{this.remove()}, this.TTL)
     }
 }
@@ -50,7 +51,7 @@ $(()=>{
         emo = {
             "x": parseInt(e.pageX / $(window).width() * 100),
             "y": parseInt(e.pageY / $(window).height() * 100),
-            "ID": parseInt(Math.random() * 5)
+            "ID": parseInt(Math.random() * emoList.length)
         }
         console.log(emo)
         socket.emit('emoSend', emo);
