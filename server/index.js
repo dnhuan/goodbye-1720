@@ -37,6 +37,7 @@ io.on("connection", (socket) => {
             intervalIDs.forEach((intervalID) => {
               clearInterval(intervalID);
             });
+            countdownTimer = 30
           } else {
             io.emit("countdownTimer", countdownTimer);
             countdownTimer--;
