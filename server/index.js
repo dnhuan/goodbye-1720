@@ -58,6 +58,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(process.env.PORT || 3000, () => {
+httpsServer.listen(process.env.PORT || 3000, () => {
   console.log("listening on port ", process.env.PORT || 3000);
 });
