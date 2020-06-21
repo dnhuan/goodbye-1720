@@ -11,7 +11,7 @@ const io = require("socket.io")(httpsServer);
 const path = require("path");
 const cors = require("cors");
 
-var countdownTimer = 30;
+var countdownTimer = 31;
 var intervalIDs = [];
 
 app.use(cors());
@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
       intervalIDs.forEach((intervalID) => {
         clearInterval(intervalID);
       });
-      countdownTimer = 30;
+      countdownTimer = 31;
       io.emit("countdownTimer", countdownTimer);
     }
   });
