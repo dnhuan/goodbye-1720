@@ -28,7 +28,11 @@ $(()=>{
     const socket = io('https://wilsonle.me:6969')
     socket.on('hello', sec => {
         console.log("Hello at", sec)
-        if(sec > 0){
+        if(sec > 30){
+            $('.timer-number').text("WAITING FOR HOST");
+            $('.timer-container').fadeIn();
+        }
+        else if(sec > 0){
             $('.timer-number').text(sec);
         }else{
             $('.timer-container').remove();
