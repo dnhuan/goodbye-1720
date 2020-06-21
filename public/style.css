@@ -10,3 +10,9 @@ body {
     50%{background-position:87% 100%}
     100%{background-position:14% 0%}
 }
+
+iframe {
+	height: auto;
+	width: 100vw;
+	margin: auto;
+}

@@ -28,12 +28,13 @@ io.on("connection", (socket) => {
       console.log("START TIMER");
       intervalIDs.push(
         setInterval(() => {
-          io.emit("countdownTimer", countdownTimer);
-          countdownTimer--;
           if (countdownTimer < 0) {
             intervalIDs.forEach((intervalID) => {
               clearInterval(intervalID);
             });
+          } else {
+            io.emit("countdownTimer", countdownTimer);
+            countdownTimer--;
           }
         }, 1000)
       );
