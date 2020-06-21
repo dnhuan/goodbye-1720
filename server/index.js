@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
   socket.on("start", (pass) => {
     if ((pass == process.env.PASS)) {
       console.log("START TIMER");
+      countdownTimer--; // init
       intervalIDs.push(
         setInterval(() => {
           if (countdownTimer < 0) {

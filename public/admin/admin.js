@@ -30,7 +30,7 @@ $(()=>{
         console.log("Hello at", sec)
         if(sec > 30){
             $('.timer-number').text("WAITING FOR HOST");
-            $('.timer-container').fadeIn();
+            $('.timer-container').css("visibility","visible");
         }
         else if(sec > 0){
             $('.timer-number').text(sec);
@@ -41,13 +41,18 @@ $(()=>{
     })
     // socket timer
     socket.on('countdownTimer', sec => {
-        if(sec > 0){
+        if(sec > 30){
+            $('.timer-number').text("WAITING FOR HOST");
+            $('.timer-container').css("visibility","visible");
+        }
+        else if(sec > 0){
             $('.timer-number').text(sec);
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
         }
     })
+    
     // admin console
     $('.controller-button__start').click(e=>{
         e.preventDefault();
