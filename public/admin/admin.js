@@ -26,8 +26,15 @@ class Emoji{
 $(()=>{
     // init socket
     const socket = io('https://wilsonle.me:6969')
-    socket.on('hello', data => console.log(data))
-
+    socket.on('hello', sec => {
+        console.log("Hello at", sec)
+        if(sec > 0){
+            $('.timer-number').text(sec);
+        }else{
+            $('.timer-container').remove();
+            $('iframe').css("visibility","visible");
+        }
+    })
     // socket timer
     socket.on('countdownTimer', sec => {
         if(sec > 0){
@@ -45,7 +52,7 @@ $(()=>{
         $('#controller-key').val('')
     })
     //
-    $('.controller-button__cancel').click(e=>{
+    $('.controller-button__reset').click(e=>{
         e.preventDefault();
         socket.emit('cancel', $('#controller-key').val())
         $('#controller-key').val('')

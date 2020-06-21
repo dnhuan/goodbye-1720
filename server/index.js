@@ -26,7 +26,7 @@ app.get("/admin", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  socket.emit("hello", "Hi user!");
+  socket.emit("hello", countdownTimer);
   //
   socket.on("start", (pass) => {
     if ((pass == process.env.PASS)) {
