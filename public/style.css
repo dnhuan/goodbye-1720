@@ -16,3 +16,16 @@ iframe {
 	width: 100vw;
 	margin: auto;
 }
+
+.emo-container{
+	position: absolute;
+	z-index: 9990;
+	height: 100vh;
+	width: 100vw;
+}
+
+.emo{
+	position: absolute;
+	width: auto;
+	height: auto;
+}

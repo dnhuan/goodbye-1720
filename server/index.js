@@ -56,6 +56,10 @@ io.on("connection", (socket) => {
       io.emit("countdownTimer", countdownTimer);
     }
   });
+  //
+  socket.on('emoSend', emo => {
+    io.emit('emoReceive', emo)
+  })
 });
 
 httpsServer.listen(process.env.PORT || 3000, () => {
