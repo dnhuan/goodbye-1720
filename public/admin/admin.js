@@ -41,7 +41,6 @@ $(()=>{
             $('.timer-number').text(sec);
         }else{
             $('.timer-container').remove();
-            $('.controller-container').remove();
             $('iframe').css("visibility","visible");
         }
     })
