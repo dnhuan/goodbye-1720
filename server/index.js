@@ -58,7 +58,7 @@ io.on("connection", (socket) => {
   });
   //
   socket.on('emoSend', emo => {
-    io.emit('emoReceive', emo)
+    socket.broadcast.emit('emoReceive', emo);
   })
 });
 

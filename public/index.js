@@ -5,16 +5,22 @@ class Emoji{
         this.emoID = emoID;
         this.TTL = TTL;
         this.emoList = ["hi banana 1", "banana 2 says hi","😀","🤔","🥵"];
-        this.divID = Math.random() * 696969 + 5;
+        this.divID = parseInt(Math.random() * 696969 + 5);
+        console.log(this.divID)
     }
     remove(){
         // delete element
+        console.log('attempt delete',this.divID)
+
         $(`#${this.divID}`).remove()
     }
     show(){
         // create element
-        $('.emo-container').append(`<div> hello bitasid </div>`)
-        setTimeout(this.remove(), this.TTL)
+        console.log('create',this.divID)
+        const cordX = parseInt(this.x / 100 * $(window).width())
+        const cordY = parseInt(this.y / 100 * $(window).height())
+        $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px"> hello bitasid </div>`)
+        setTimeout(()=>{this.remove()}, this.TTL)
     }
 }
 
@@ -35,8 +41,8 @@ $(()=>{
 
     // socket emo
     socket.on('emoReceive', emo =>{
-        let emoji = new Emoji(emo.x, emo.y, emo.ID, 2000)
-        emoji.show()
+        let emoji = new Emoji(emo.x, emo.y, emo.ID, 2000);
+        emoji.show();
     })
 
     // listen emo
@@ -47,6 +53,8 @@ $(()=>{
             "ID": parseInt(Math.random() * 5)
         }
         console.log(emo)
-        socket.emit('emoSend', emo)
+        socket.emit('emoSend', emo);
+        let emoji = new Emoji(emo.x, emo.y, emo.ID, 2000);
+        emoji.show()
     })
 })
