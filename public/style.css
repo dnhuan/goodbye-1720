@@ -13,9 +13,8 @@ body {
 
 iframe {
 	position: absolute;
-	width: 100vw;
+	width: auto;
 	height: auto;
-	margin: auto;
 	z-index: 999;
 }
 

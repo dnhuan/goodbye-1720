@@ -34,6 +34,7 @@ $(()=>{
             $('.timer-number').text(sec);
         }else{
             $('.timer-container').remove();
+            $('.controller-container').remove();
             $('iframe').css("visibility","visible");
         }
     })
@@ -49,7 +50,7 @@ $(()=>{
         socket.emit('cancel', $('#controller-key').val())
         $('#controller-key').val('')
     })
-    
+
     // socket emo
     socket.on('emoReceive', emo =>{
         let emoji = new Emoji(emo.x, emo.y, emo.ID, 2000);
