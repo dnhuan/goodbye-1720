@@ -37,6 +37,8 @@ $(()=>{
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
+            $('iframe').css("position", "relative");
+            $('.controller-container').css('z-index', 5);
         }
     })
     // socket timer
@@ -50,9 +52,11 @@ $(()=>{
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
+            $('iframe').css("position", "relative");
+            $('.controller-container').css('z-index', 5);
         }
     })
-    
+
     // admin console
     $('.controller-button__start').click(e=>{
         e.preventDefault();

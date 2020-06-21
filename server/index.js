@@ -11,7 +11,8 @@ const io = require("socket.io")(httpsServer);
 const path = require("path");
 const cors = require("cors");
 
-var countdownTimer = 31;
+const initTimer = process.env.SEC || 31;
+var countdownTimer = initTimer;
 var intervalIDs = [];
 
 app.use(cors());
@@ -31,7 +32,7 @@ io.on("connection", (socket) => {
   socket.on("start", (pass) => {
     if ((pass == process.env.PASS)) {
       console.log("START TIMER");
-      countdownTimer--; // init
+      countdownTimer = initTimer - 1;
       intervalIDs.push(
         setInterval(() => {
           if (countdownTimer < 0) {
@@ -53,7 +54,7 @@ io.on("connection", (socket) => {
       intervalIDs.forEach((intervalID) => {
         clearInterval(intervalID);
       });
-      countdownTimer = 31;
+      countdownTimer = initTimer;
       io.emit("countdownTimer", countdownTimer);
     }
   });

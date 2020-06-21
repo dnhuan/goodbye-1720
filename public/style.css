@@ -15,7 +15,7 @@ iframe {
 	position: absolute;
 	width: auto;
 	height: auto;
-	z-index: 999;
+	z-index: 5;
 }
 
 .timer-container{
