@@ -1,5 +1,5 @@
 $(()=>{
-    const socket = io('http://wilsonle.me:3000')
+    const socket = io('https://wilsonle.me:6969')
 
     socket.on('hello', data => console.log(data))
     socket.on('countdownTimer', data => {

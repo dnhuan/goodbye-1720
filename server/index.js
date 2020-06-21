@@ -1,8 +1,13 @@
+const fs = require('fs');
+const credentials = {
+  key: fs.readFileSync('../sslcert/wilsonle.me.key', 'utf8'),
+  cert: fs.readFileSync('../sslcert/wilsonle.me.chained.crt', 'utf8')
+}
 require('dotenv').config()
 const express = require("express");
 const app = express();
-const httpServer = require("http").Server(app);
-const io = require("socket.io")(httpServer);
+const httpsServer = require("https").createServer(credentials, app);
+const io = require("socket.io")(httpsServer);
 const path = require("path");
 const cors = require("cors");
 
@@ -53,6 +58,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log("listening on port 3000");
+httpServer.listen(process.env.PORT || 3000, () => {
+  console.log("listening on port ", process.env.PORT || 3000);
 });
