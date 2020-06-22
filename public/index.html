@@ -18,9 +18,9 @@
 <body>
     <div class="bg">
         <div class="emo-container"></div>
-        <div class="timer-container" style="visibility:hidden">
-            <div class="timer-text">COUNTDOWN</div>
-            <div class="timer-number">WAITING FOR HOST</div>
+        <div class="timer-container">
+            <canvas id="canvas-number"></canvas>
+            <canvas id="canvas-dots"></canvas>
         </div>
         <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -35,5 +35,6 @@
     $(".bg").css("background-size", "800% 800%");
     $(".bg").css("height", "100vh");
 </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script><script  src="/cd.js"></script>
 
 </html>
