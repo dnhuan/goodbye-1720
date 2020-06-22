@@ -1,16 +1,11 @@
-body {
-	background: linear-gradient(210deg, #F25022, #71AF10, #3985B5, #FFB901);
-	background-size: 800% 800%;
-	animation: gradient 20s ease infinite;
-	min-height: 90vh;
+.bg {
+	animation: grad 60s ease infinite;
 }
-
-@keyframes gradient {
-    0%{background-position:14% 0%}
-    50%{background-position:87% 100%}
-    100%{background-position:14% 0%}
+@keyframes grad{
+	0%{background-position:0% 0%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 0%}
 }
-
 iframe {
 	position: absolute;
 	width: auto;
