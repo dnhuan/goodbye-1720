@@ -1,3 +1,11 @@
+.bg {
+	animation: grad 60s ease infinite;
+}
+@keyframes grad{
+	0%{background-position:0% 0%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 0%}
+}
 iframe {
 	position: absolute;
 	width: auto;
