@@ -10,7 +10,7 @@
         integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script src="lib/jquery.keyframes.min.js"></script>
+    <script src="/lib/jquery.keyframes.min.js"></script>
     <script src="/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
@@ -19,8 +19,14 @@
     <div class="bg">
         <div class="emo-container"></div>
         <div class="timer-container">
-            <canvas id="canvas-number"></canvas>
-            <canvas id="canvas-dots"></canvas>
+            <svg height='163' viewBox='0 0 162 163' width='162' xmlns='http://www.w3.org/2000/svg'>
+                <g fill='none' id='numbers' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'
+                    stroke='#4285F4'>
+                    <path
+                        d='M81.5986 147.9943c36.4492 0 65.997-29.548 65.997-65.9972 0-36.449-29.5478-66.0027-65.997-66.0027-36.4493 0-65.9972 29.5536-65.9972 66.0028 0 36.4494 29.548 65.9973 65.9972 65.9973z'
+                        id='number'>
+                </g>
+            </svg>
         </div>
         <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -35,6 +41,8 @@
     $(".bg").css("background-size", "800% 800%");
     $(".bg").css("height", "100vh");
 </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script><script  src="/cd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+<script src = "/cd.js"></script>
+
 
 </html>
