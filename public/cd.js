@@ -10,27 +10,31 @@ const two = "M37 37.8676s10.1055-24.2898 37.181-22.802c27.0756 1.488 40.7335 28.
 const one = "M66 16.9944C66 15.893 66.8998 15 68.0023 15h28.9954C98.1035 15 99 15.8955 99 16.9944v128.0112C99 146.107 98.1002 147 96.9977 147H68.0023C66.8965 147 66 146.1045 66 145.0056V16.9944z"
 const zero = "M81.5986 147.9943c36.4492 0 65.997-29.548 65.997-65.9972 0-36.449-29.5478-66.0027-65.997-66.0027-36.4493 0-65.9972 29.5536-65.9972 66.0028 0 36.4494 29.548 65.9973 65.9972 65.9973z"
 
-var units = [
-  nine, eight, seven, six, five, four, three, two, one, zero
-]
-var tens = [
-  three, two, one
+var digits = [
+  zero, one, two, three, four, five, six, seven, eight, nine
 ]
 
 // color array
 var color = ["#EA4335", "#FBBC05", "#34A853", "#4285F4", "#EA4335", "#FBBC05", "#34A853", "#EA4335", "#FBBC05", "#34A853"];
-var start = 0;
-var timer = setInterval(decrement, 1000);
-function decrement() {
-  if (start < number.length) {
-    Snap.select('#units').animate({ d: units[start] }, 500, mina.backin);
-    Snap.select('#tens').animate({ d: number[start] }, 500, mina.backin);
-    start++;
-    console.log("start = " + start);
-  }
-  else {
-    clearInterval(timer);
-  }
+// var start = 0;
+// var timer = setInterval(decrement, 1000);
+// function decrement() {
+//   if (start < number.length) {
+//     Snap.select('#units').animate({ d: units[start] }, 500, mina.backin);
+//     Snap.select('#tens').animate({ d: tens[start] }, 500, mina.backin);
+//     start++;
+//     console.log("start = " + start);
+//   }
+//   else {
+//     clearInterval(timer);
+//   }
+// }
+ 
+function renderCountdown(sec){
+  $(()=>{$('.timer-number').text("");})
+  Snap.select('#units').animate({ d: digits[sec % 10] }, 500, mina.backin);
+  Snap.select('#tens').animate({ d: digits[Math.floor(sec / 10)]}, 500, mina.backin);
+  console.log(sec);
 }
 
-
+function renderWait(){}

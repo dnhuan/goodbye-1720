@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin console - Goodbye 1720</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"
-            integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-        <script src="/admin/admin.js"></script>
-        <link rel="stylesheet" type="text/css" href="/style.css">
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goodbye 1720</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"
+        integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="/lib/jquery.keyframes.min.js"></script>
+    <script src="/admin/admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <div class="bg">
         <div class="emo-container"></div>
-        <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-        <div class="timer-container" style="visibility:hidden">
+        <div class="timer-container">
             <div class="timer-text">COUNTDOWN</div>
-            <div class="timer-number">WAITING FOR HOST</div>
+            <div class="timer-number">WAITING FOR HOST
+                <svg height='163' viewBox='0 0 162 163' width='162' xmlns='http://www.w3.org/2000/svg'>
+                    <g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'
+                        stroke='#4285F4'>
+                        <path id='tens'>
+                    </g>
+                </svg>
+                <svg height='163' viewBox='0 0 162 163' width='162' xmlns='http://www.w3.org/2000/svg'>
+                    <g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'
+                        stroke='#4285F4'>
+                        <path id='units'>
+                    </g>
+                </svg>
+            </div>
         </div>
+        <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
         <div class="controller-container">
             <input id="controller-key" type="text" placeholder="password">
             <button class="controller-button__start">Start counter</button>
             <button class="controller-button__reset">Reset counter</button>
         </div>
-    </body>
+    </div>
+</body>
+<script type="text/javascript">
+    const angle = Math.atan($(window).width() / $(window).height()) * 180;
+    console.log(angle);
+    $(".bg").css("background", `linear-gradient(${angle}deg, #f25022, #71af10, #3985b5, #ffb901)`);
+    $(".bg").css("background-size", "800% 800%");
+    $(".bg").css("height", "100vh");
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+<script src="/cd.js"></script>
+
+
 </html>

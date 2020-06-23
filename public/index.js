@@ -29,11 +29,12 @@ $(()=>{
     socket.on('hello', sec => {
         console.log("Hello at", sec)
         if(sec > 30){
-            $('.timer-number').text("WAITING FOR HOST");
+            // $('.timer-number').text("WAITING FOR HOST");
             $('.timer-container').css("visibility","visible");
         }
         else if(sec > 0){
-            $('.timer-number').text(sec);
+            // $('.timer-number').text(sec);
+            renderCountdown(sec);
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
@@ -47,7 +48,8 @@ $(()=>{
             $('.timer-container').css("visibility","visible");
         }
         else if(sec > 0){
-            $('.timer-number').text(sec);
+            // $('.timer-number').text(sec);
+            renderCountdown(sec);
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
