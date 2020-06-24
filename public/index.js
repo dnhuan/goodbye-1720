@@ -29,11 +29,10 @@ $(()=>{
     socket.on('hello', sec => {
         console.log("Hello at", sec)
         if(sec > 30){
-            $('.timer-container').css("visibility","visible");
+            resetCountdown();
         }
         else if(sec > 0){
-            initCountdown();
-            renderCountdown(sec);
+            initCountdown(sec);
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");
@@ -43,10 +42,10 @@ $(()=>{
     // socket timer
     socket.on('countdownTimer', sec => {
         if(sec > 30){
-            $('.timer-container').css("visibility","visible");
+            resetCountdown();
         }
         else if(sec > 0){
-            renderCountdown(sec);
+            initCountdown(sec);
         }else{
             $('.timer-container').remove();
             $('iframe').css("visibility","visible");

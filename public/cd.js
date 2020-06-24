@@ -18,14 +18,20 @@ var digits = [
 // color array
 var color = ["#EA4335", "#FBBC05", "#34A853", "#4285F4", "#EA4335", "#FBBC05", "#34A853", "#EA4335", "#FBBC05", "#34A853"];
 
-function initCountdown() {
+function initCountdown(sec) {
   console.log("init CD")
-  $('#preCountdown').remove()
-  $('.timer-container').append("<svg><g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='tens'></g></svg > ")
-  $('.timer-container').append("<svg><g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='units'></g></svg > ")
+  // $('#preCountdown').remove();
+  $('.timer-container').html("<div id='number-container'><svg><g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='tens'></g></svg ><svg><g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='units'></g></svg ></div>")
+  renderCountdown(sec)
 }
 function renderCountdown(sec) {
   Snap.select('#units').animate({ d: digits[sec % 10] }, 500, mina.backin);
   Snap.select('#tens').animate({ d: digits[Math.floor(sec / 10)] }, 500, mina.backin);
   console.log(sec);
+}
+function resetCountdown(){
+
+  console.log("reset CD")
+  $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1>Waiting for hosts</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
+  // $('#number-container').remove();
 }

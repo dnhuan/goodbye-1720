@@ -1,77 +1,73 @@
-const emoList = ["😀","😃","😄","😁","😆","😅","😂","🤣","☺️","😊","😇","🙂","🙃","😉","😌","😍","😘","😗","😙","😚","😋","😛","😝","😜","🤪","🤨","🧐","🤓","😎","🤩","😏","😒","😞","😔","😟","😕","🙁","☹️","😣","😖","😫","😩","😢","😭","😤","😠","😡","🤬","🤯","😳","😱","😨","😰","😥","😓","🤗","🤔","🤭","🤫","🤥","😶","😐","😑","😬","🙄","😯","😦","😧","😮","😲","😴","🤤","😪","😵","🤐","🤢","🤮","🤧","😷","🤒","🤕","🤑","🤠","😈","👿","👹","👺","🤡","💩","👻","💀","☠️","👽","👾","🤖","🎃","😺","😸","😹","😻","😼","😽","🙀","😿","😾","👋","🤚","🖐","✋","🖖","👌","✌️","🤞","🤟","🤘","🤙","👈","👉","👆","🖕","👇","☝️","👍","👎","✊","👊","🤛","🤜","👏","🙌","👐","🤲","🤝","💪","🧠"];
+const emoList = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😶", "😐", "😑", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "😴", "🤤", "😪", "😵", "🤐", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👹", "👺", "🤡", "💩", "👻", "💀", "☠️", "👽", "👾", "🤖", "🎃", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "👋", "🤚", "🖐", "✋", "🖖", "👌", "✌️", "🤞", "🤟", "🤘", "🤙", "👈", "👉", "👆", "🖕", "👇", "☝️", "👍", "👎", "✊", "👊", "🤛", "🤜", "👏", "🙌", "👐", "🤲", "🤝", "💪", "🧠"];
 
-class Emoji{
-    constructor(x, y, emoID, TTL){
+class Emoji {
+    constructor(x, y, emoID, TTL) {
         this.x = x;
         this.y = y;
         this.emoID = emoID;
         this.TTL = TTL;
         this.divID = parseInt(Math.random() * 696969 + 5);
     }
-    remove(){
+    remove() {
         // delete element
         // console.log('attempt delete',this.divID)
         $(`#${this.divID}`).remove()
     }
-    show(){
+    show() {
         // create element
         // console.log('create',this.divID)
         const cordX = parseInt(this.x / 100 * $(window).width())
         const cordY = parseInt(this.y / 100 * $(window).height())
         $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px">${emoList[this.emoID]}</div>`)
-        setTimeout(()=>{this.remove()}, this.TTL)
+        setTimeout(() => { this.remove() }, this.TTL)
     }
 }
 
-$(()=>{
+$(() => {
     // init socket
     const socket = io('https://wilsonle.me:6969')
     socket.on('hello', sec => {
         console.log("Hello at", sec)
-        if(sec > 30){
-            $('.timer-number').text("WAITING FOR HOST");
-            $('.timer-container').css("visibility","visible");
+        if (sec > 30) {
+            // $('.timer-container').css("visibility","visible");
+            resetCountdown();
         }
-        else if(sec > 0){
-            $('.timer-number').text(sec);
-        }else{
+        else if (sec > 0) {
+            initCountdown(sec);
+        } else {
             $('.timer-container').remove();
-            $('iframe').css("visibility","visible");
-            $('iframe').css("position", "relative");
-            $('.controller-container').css('z-index', 5);
+            $('iframe').css("visibility", "visible");
         }
     })
+
     // socket timer
     socket.on('countdownTimer', sec => {
-        if(sec > 30){
-            $('.timer-number').text("WAITING FOR HOST");
-            $('.timer-container').css("visibility","visible");
+        if (sec > 30) {
+            resetCountdown();
         }
-        else if(sec > 0){
-            $('.timer-number').text(sec);
-        }else{
+        else if (sec > 0) {
+            initCountdown(sec);
+        } else {
             $('.timer-container').remove();
-            $('iframe').css("visibility","visible");
-            $('iframe').css("position", "relative");
-            $('.controller-container').css('z-index', 5);
+            $('iframe').css("visibility", "visible");
         }
     })
 
     // admin console
-    $('.controller-button__start').click(e=>{
+    $('.controller-button__start').click(e => {
         e.preventDefault();
         socket.emit('start', $('#controller-key').val())
         $('#controller-key').val('')
     })
     //
-    $('.controller-button__reset').click(e=>{
+    $('.controller-button__reset').click(e => {
         e.preventDefault();
         socket.emit('cancel', $('#controller-key').val())
         $('#controller-key').val('')
     })
 
     // socket emo
-    socket.on('emoReceive', emo =>{
+    socket.on('emoReceive', emo => {
         let emoji = new Emoji(emo.x, emo.y, emo.ID, 2000);
         emoji.show();
     })

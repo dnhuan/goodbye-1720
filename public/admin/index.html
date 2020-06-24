@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Goodbye 1720</title>
+    <title>Admin - Goodbye 1720</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"
         integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
@@ -18,27 +18,18 @@
 <body>
     <div class="bg">
         <div class="emo-container"></div>
-        <div class="timer-container">
-            <div id="preCountdown">
-                <div class="load-3">
-                    <h1>Waiting for hosts</h1>
-                    <div id="dots">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="timer-container"></div>
+        <div id="iframe-container">
+            <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
-        <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
         <div class="controller-container">
             <input id="controller-key" type="text" placeholder="password">
             <div id="controller-button">
-                <button class="controller-button__start">Start counter</button>
-                <button class="controller-button__reset">Reset counter</button>
+                <button class="controller-button__start">Start</button>
+                <button class="controller-button__reset">Reset</button>
             </div>
         </div>
     </div>
@@ -53,5 +44,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 <script src="/cd.js"></script>
 
-
 </html>
+
