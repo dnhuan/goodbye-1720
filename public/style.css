@@ -1,11 +1,19 @@
 .bg {
 	animation: grad 60s ease infinite;
 }
-@keyframes grad{
-	0%{background-position:0% 0%}
-    50%{background-position:100% 100%}
-    100%{background-position:0% 0%}
+
+@keyframes grad {
+	0% {
+		background-position: 0% 0%
+	}
+	50% {
+		background-position: 100% 100%
+	}
+	100% {
+		background-position: 0% 0%
+	}
 }
+
 @import url(https://fonts.googleapis.com/css?family=Lato:900);
 canvas {
 	position: absolute;
@@ -27,14 +35,25 @@ iframe {
 	z-index: 5;
 }
 
-.timer-container{
+svg {
+	width: 20vw;
+	height: 20vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.timer-container {
 	position: relative;
 	z-index: 4;
 	user-select: none;
 	pointer-events: none;
+	display: flex;
+	flex-direction: row;
 }
 
-.emo-container{
+.emo-container {
 	position: absolute;
 	height: 100vh;
 	width: 100vw;
@@ -42,7 +61,7 @@ iframe {
 	user-select: none;
 }
 
-.emo{
+.emo {
 	position: absolute;
 	width: auto;
 	height: auto;
@@ -51,7 +70,7 @@ iframe {
 	user-select: none;
 }
 
-.controller-container{
+.controller-container {
 	position: relative;
 	z-index: 4;
 }
