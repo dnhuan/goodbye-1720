@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
 .bg {
 	animation: grad 60s ease infinite;
 }
@@ -14,25 +16,12 @@
 	}
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:900);
-canvas {
+.iframe-container {
+	height: fit-content;
+	width: fit-content;
 	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-
-#canvas-number {
-	width: 680px;
-	height: 420px;
-}
-
-iframe {
-	position: absolute;
-	width: auto;
-	height: auto;
 	z-index: 5;
+	transform: translate(50% 50%);
 }
 
 svg {
@@ -55,6 +44,7 @@ svg {
 #preCountdown {
 	margin: auto;
 }
+
 #number-container {
 	height: 30%;
 	margin: auto;

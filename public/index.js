@@ -35,7 +35,7 @@ $(()=>{
             initCountdown(sec);
         }else{
             $('.timer-container').remove();
-            $('iframe').css("visibility","visible");
+            renderYoutube();
         }
     })
 
@@ -48,7 +48,7 @@ $(()=>{
             initCountdown(sec);
         }else{
             $('.timer-container').remove();
-            $('iframe').css("visibility","visible");
+            renderYoutube();
         }
     })
 
