@@ -19,20 +19,15 @@
     <div class="bg">
         <div class="emo-container"></div>
         <div class="timer-container">
-            <div class="timer-text">COUNTDOWN</div>
-            <div class="timer-number">WAITING FOR HOST
-                <svg height='163' viewBox='0 0 162 163' width='162' xmlns='http://www.w3.org/2000/svg'>
-                    <g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'
-                        stroke='#4285F4'>
-                        <path id='tens'>
-                    </g>
-                </svg>
-                <svg height='163' viewBox='0 0 162 163' width='162' xmlns='http://www.w3.org/2000/svg'>
-                    <g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'
-                        stroke='#4285F4'>
-                        <path id='units'>
-                    </g>
-                </svg>
+            <div id="preCountdown">
+                <div class="load-3">
+                    <h1>Waiting for hosts</h1>
+                    <div id="dots">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -41,8 +36,10 @@
         </iframe>
         <div class="controller-container">
             <input id="controller-key" type="text" placeholder="password">
-            <button class="controller-button__start">Start counter</button>
-            <button class="controller-button__reset">Reset counter</button>
+            <div id="controller-button">
+                <button class="controller-button__start">Start counter</button>
+                <button class="controller-button__reset">Reset counter</button>
+            </div>
         </div>
     </div>
 </body>

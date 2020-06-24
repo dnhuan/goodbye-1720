@@ -28,11 +28,11 @@ $(()=>{
     const socket = io('https://wilsonle.me:6969')
     socket.on('hello', sec => {
         console.log("Hello at", sec)
-        initCountdown();
         if(sec > 30){
             $('.timer-container').css("visibility","visible");
         }
         else if(sec > 0){
+            initCountdown();
             renderCountdown(sec);
         }else{
             $('.timer-container').remove();

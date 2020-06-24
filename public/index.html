@@ -19,12 +19,23 @@
     <div class="bg">
         <div class="emo-container"></div>
         <div class="timer-container">
-            <h1 id="preCountdown">WAITING FOR HOSTS...</h1>
+            <div id="preCountdown">
+                <div class="load-3">
+                    <h1>Waiting for hosts</h1>
+                    <div id="dots">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+        <div id="iframe-container">
+            <iframe style="visibility:hidden" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </body>
 <script type="text/javascript">

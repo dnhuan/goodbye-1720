@@ -19,6 +19,7 @@ var digits = [
 var color = ["#EA4335", "#FBBC05", "#34A853", "#4285F4", "#EA4335", "#FBBC05", "#34A853", "#EA4335", "#FBBC05", "#34A853"];
 
 function initCountdown() {
+  console.log("init CD")
   $('#preCountdown').remove()
   $('.timer-container').append("<svg><g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='tens'></g></svg > ")
   $('.timer-container').append("<svg><g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='units'></g></svg > ")
