@@ -12,7 +12,9 @@ svg {
 	height: 100%;
 	width: 30%;
 }
-
+.load-3 h1{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .timer-container {
 	position: absolute;
 	z-index: 4;
@@ -41,6 +43,7 @@ svg {
 	width: 15px;
 	height: 15px;
 	border-radius: 15px;
+	background-color: black;
 }
 
 @keyframes loadingC {

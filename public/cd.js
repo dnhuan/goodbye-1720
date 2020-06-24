@@ -34,7 +34,7 @@ function renderCountdown(sec) {
 function resetCountdown(){
   firstInit = true;
   console.log("reset CD")
-  $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1>Waiting for hosts</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
+  $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1>WAITING FOR HOSTS</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
 }
 function renderYoutube(){
   $('.iframe-container').html('<iframe src="https://www.youtube.com/embed/ZUn64eKKQg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>')
