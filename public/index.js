@@ -10,12 +10,10 @@ class Emoji{
     }
     remove(){
         // delete element
-        // console.log('attempt delete',this.divID)
         $(`#${this.divID}`).remove()
     }
     show(){
         // create element
-        // console.log('create',this.divID)
         const cordX = parseInt(this.x / 100 * $(window).width())
         const cordY = parseInt(this.y / 100 * $(window).height())
         $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px">${emoList[this.emoID]}</div>`)

@@ -10,12 +10,10 @@ class Emoji {
     }
     remove() {
         // delete element
-        // console.log('attempt delete',this.divID)
         $(`#${this.divID}`).remove()
     }
     show() {
         // create element
-        // console.log('create',this.divID)
         const cordX = parseInt(this.x / 100 * $(window).width())
         const cordY = parseInt(this.y / 100 * $(window).height())
         $('.emo-container').append(`<div class="emo" id=${this.divID} style="top:${cordY}px; left:${cordX}px">${emoList[this.emoID]}</div>`)
@@ -29,14 +27,13 @@ $(() => {
     socket.on('hello', sec => {
         console.log("Hello at", sec)
         if (sec > 30) {
-            // $('.timer-container').css("visibility","visible");
             resetCountdown();
         }
         else if (sec > 0) {
             initCountdown(sec);
         } else {
             $('.timer-container').remove();
-            $('iframe').css("visibility", "visible");
+            renderYoutube();
         }
     })
 
@@ -49,7 +46,7 @@ $(() => {
             initCountdown(sec);
         } else {
             $('.timer-container').remove();
-            $('iframe').css("visibility", "visible");
+            renderYoutube();
         }
     })
 
