@@ -56,6 +56,7 @@ io.on("connection", (socket) => {
       intervalIDs.forEach((intervalID) => {
         clearInterval(intervalID);
       });
+      intervalIDs = []
       countdownTimer = initTimer;
       io.emit("countdownTimer", countdownTimer);
     }
