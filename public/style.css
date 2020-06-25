@@ -1,24 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:900);
 .bg {
-	display:flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .bg .iframe-container {
 	z-index: 5;
 	width: 90vw;
 	height: 60vw;
 }
+
 .iframe-container #frame {
 	width: 100%;
 	height: 100%;
 }
-.load-3 h1{
+
+.load-3 h1 {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	white-space: nowrap;
 	font-size: 5vw;
 	padding-bottom: 1vh;
 }
+
 .timer-container {
 	position: absolute;
 	z-index: 4;
@@ -45,10 +49,12 @@
 	flex-direction: row;
 	justify-content: center;
 }
+
 svg {
 	height: 100%;
 	width: 200px;
 }
+
 .line {
 	display: inline-block;
 	width: 15px;
@@ -82,7 +88,7 @@ svg {
 }
 
 #dots {
-	display:flex;
+	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 }
@@ -109,16 +115,16 @@ svg {
 	z-index: 3;
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	margin: auto;
-	padding-top: 100%;
+	top: 100px;
 }
+
 .controller-container #controller-key {
 	position: relative;
 	width: 150px;
 	height: auto;
 	margin: auto;
 }
+
 .controller-container #controller-button {
 	display: flex;
 	flex-direction: row;

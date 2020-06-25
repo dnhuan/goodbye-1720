@@ -37,6 +37,7 @@ function resetCountdown(){
   $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1 id="wait">WAITING FOR HOSTS</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
 }
 function renderYoutube(){
+  $('.bg').append('<div class="iframe-container"></div>')
   $('.iframe-container').html('<iframe id="frame" src="https://www.youtube.com/embed/ZUn64eKKQg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>')
 }
 
