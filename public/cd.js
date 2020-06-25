@@ -22,7 +22,7 @@ function initCountdown(sec) {
   if (firstInit){
     firstInit = false;
     console.log("init CD")
-    $('.timer-container').html("<div id='number-container'><svg><g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='tens'></g></svg ><svg><g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' stroke = '#4285F4' > <path id='units'></g></svg ></div>")
+    $('.timer-container').html("<div id='number-container'><svg><g fill='none' id='digit1' stroke-linecap='round' stroke-linejoin='round' stroke-width='5' stroke = '#5c00b3' > <path id='tens'></g></svg ><svg><g fill='none' id='digit2' stroke-linecap='round' stroke-linejoin='round' stroke-width='5' stroke = '#5c00b3' > <path id='units'></g></svg ></div>")
   }
   renderCountdown(sec)
 }
@@ -34,9 +34,9 @@ function renderCountdown(sec) {
 function resetCountdown(){
   firstInit = true;
   console.log("reset CD")
-  $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1>WAITING FOR HOSTS</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
+  $('.timer-container').html('<div id="preCountdown"><div class="load-3"><h1 id="wait">WAITING FOR HOSTS</h1><div id="dots"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div>')
 }
 function renderYoutube(){
-  $('.iframe-container').html('<iframe src="https://www.youtube.com/embed/ZUn64eKKQg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>')
+  $('.iframe-container').html('<iframe id="frame" src="https://www.youtube.com/embed/ZUn64eKKQg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>')
 }
 
