@@ -109,9 +109,7 @@ svg {
 	z-index: 3;
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	margin: auto;
-	padding-top: 100%;
+	top: 50px;
 }
 .controller-container #controller-key {
 	position: relative;
